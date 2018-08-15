@@ -53,7 +53,7 @@ Modules - reusable parts of our design
   font-size: 12px;
   font-size: 0.75rem;
   color: #ffffff;
-  background-color: #696f9b;
+  background-color: #000000;
   border-radius: 15px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   -webkit-transition: background-color 0.2s;
@@ -67,10 +67,10 @@ Modules - reusable parts of our design
 
 .btn.downloadAp {
   margin-top: 20px;
-  background-image: url(../img/downloadApple.svg);
+  background-image: url(../img/downloadApple.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 200px 70px;
+  background-size: 100%;
 }
 
 .btn.downloadAn {
@@ -78,7 +78,7 @@ Modules - reusable parts of our design
   background-image: url(../img/downloadAndroid.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 200px 65px;
+  background-size: 100%;
 }
 
 
@@ -100,6 +100,7 @@ Modules - reusable parts of our design
     font-size: 14px;
     font-size: 0.875rem;
     letter-spacing: 2px;
+    background-size: 1000px 20px;
   }
 }
 
