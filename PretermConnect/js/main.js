@@ -7,7 +7,7 @@ jQuery(document).ready(function($){
 		event.preventDefault();
 		$('header').addClass('slide-down');
 		if($(window).width() < MqL) {
-			$('body,html').animate({'scrollTop': $('#cd-product-tour').offset().top - 30 }, 200); 
+			$('body,html').animate({'scrollTop': $('#cd-product-tour').offset().top - 30 }, 200);
 		} else {
 			$('.cd-main-content').addClass('is-product-tour');
 			uploadVideo(jQuery('.cd-active'));
@@ -22,13 +22,13 @@ jQuery(document).ready(function($){
 			//in this case - switch from product tour div to product intro div
 			showProductIntro();
 		} else {
-			updateSlider(activeSlide, 'prev'); 
+			updateSlider(activeSlide, 'prev');
 		}
 	});
 	$('.cd-next').on('click', function(event){
 		event.preventDefault();
 		var activeSlide = $('.cd-active');
-		updateSlider(activeSlide, 'next'); 
+		updateSlider(activeSlide, 'next');
 	});
 
 	$(document).keyup(function(event){
@@ -38,7 +38,7 @@ jQuery(document).ready(function($){
 				//in this case - switch from product tour div to product intro div
 				showProductIntro();
 			} else {
-				updateSlider(activeSlide, 'prev'); 
+				updateSlider(activeSlide, 'prev');
 			}
 		} else if(event.which=='39' && $('.cd-main-content').hasClass('is-product-tour')) {
 			var activeSlide = $('.cd-active');
@@ -152,7 +152,7 @@ jQuery(document).ready(function($){
 						}
 					}
 				}, 500);
-			});			
+			});
 		}
 	}
 });

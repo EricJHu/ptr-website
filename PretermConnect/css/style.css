@@ -66,7 +66,7 @@ Modules - reusable parts of our design
 }
 
 .btn.downloadAp {
-  margin-top: 20px;
+  margin-top: 15px;
   background-image: url(../img/downloadApple.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -74,14 +74,12 @@ Modules - reusable parts of our design
 }
 
 .btn.downloadAn {
-  margin-top: 20px;
+  margin-top: 15px;
   background-image: url(../img/downloadAndroid.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
 }
-
-
 
 .btn.salmon {
   background-color: #f58780;
@@ -97,10 +95,9 @@ Modules - reusable parts of our design
 
 @media only screen and (min-width: 1070px) {
   .btn {
-    font-size: 14px;
-    font-size: 0.875rem;
-    letter-spacing: 2px;
-    background-size: 100px 20px;
+    font-size: 20px;
+    font-size: 1.25rem;
+    letter-spacing: 3px;
   }
 }
 
@@ -155,7 +152,7 @@ html, body {
 
 .cd-header #cd-logo img {
   display: block;
-  width: 200px;
+  width: 190px;
   height: 40px;
 }
 
@@ -168,6 +165,7 @@ html, body {
 .cd-header .btn {
   height: 30px;
   width: 60px;
+  margin-top: 12.5%;
   line-height: 50px;
   padding: 0 3.1em;
 }
@@ -201,6 +199,7 @@ html, body {
     height: 50px;
     width: 190px;
     margin-left: 10px;
+    margin-top: 5px;
     line-height: 50px;
   }
 }
@@ -229,7 +228,7 @@ html, body {
   margin-bottom: 10px;
   font-weight: 100;
   font-size: 25px;
-  font-size: 1.5625rem;
+  font-size: 1.7rem;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -307,7 +306,7 @@ html, body {
   }
   .cd-product-intro p {
     font-size: 16px;
-    font-size: 1rem;
+    font-size: 1.25rem;
     padding: 10px 0 44px;
     margin: 0;
   }
@@ -370,13 +369,13 @@ html, body {
 .cd-single-item h2 {
   margin-bottom: 15px;
   font-size: 22px;
-  font-size: 1.375rem;
+  font-size: 1.5rem;
 }
 
 .cd-single-item p {
   padding: 10px 0 50px;
   font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.6;
 }
 
@@ -432,7 +431,7 @@ html, body {
   }
   .cd-single-item p {
     font-size: 16px;
-    font-size: 1rem;
+    font-size: 1.25rem;
     line-height: 1.5;
     max-width: 600px;
   }

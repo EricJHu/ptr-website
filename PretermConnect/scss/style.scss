@@ -6,7 +6,7 @@
 
 @import '../partials/layout'; // responsive grid and media queries
 
-/* -------------------------------- 
+/* --------------------------------
 
 Primary style
 
@@ -47,7 +47,7 @@ h1, h2 {
 	color: $color-3;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Modules - reusable parts of our design
 
@@ -82,9 +82,9 @@ Modules - reusable parts of our design
 	}
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
-Main components 
+Main components
 
 -------------------------------- */
 
@@ -295,7 +295,7 @@ html, body {
 	h2 {
 		margin-bottom: 15px;
 		@include font-size(22px);
-	} 
+	}
 
 	p {
 		padding: 10px 0 50px;
@@ -363,14 +363,14 @@ html, body {
 			opacity: 1;
 		}
 
-		&.cd-move-right .cd-caption { 
+		&.cd-move-right .cd-caption {
 			@include transform(translateX(100px));
 		}
 	}
 }
 
 .cd-image-container {
-	/*wrapper for image (and video - desktop only)*/ 
+	/*wrapper for image (and video - desktop only)*/
 	max-width: 226px;
 	margin: 0 auto;
 	padding-top: 50px;
@@ -407,7 +407,7 @@ html, body {
 			max-height: 100%;
 		}
 
-		img { 
+		img {
 			height: 402px;
 			@include transition(transform .3s);
 			@include transform(translateZ(0));
@@ -452,7 +452,7 @@ html, body {
 	border-width: 45px 10px;
 	border-radius: 2.5em;
 	@include backface-visibility(hidden);
-	
+
 	&::after, &::before {
 		/*these are the iPhone circle elements*/
 		position: absolute;
@@ -526,7 +526,7 @@ html, body {
 	}
 
 	.cd-next {
-		border-left: 1px solid $color-1; 
+		border-left: 1px solid $color-1;
 	}
 
 	.cd-next::before {
@@ -535,7 +535,7 @@ html, body {
 
 	@include MQ(L) {
 		display: block;
-		
+
 		a {
 			visibility: hidden;
 			opacity: 0;
