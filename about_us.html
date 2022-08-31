@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>PretermConnect</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+	<link rel="stylesheet" href="css/global.css" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="lib/jquery-3.2.1.min.js"></script>
+	<script src="lib/jquery.serializeObject.min.js"></script>
+</head>
+<body class="d-flex flex-column min-vh-100">	
+	<div class="container-fluid px-0">		
+		<div class="page-contents-2">			
+			<div class="top-nav-bar">
+				<nav class="navbar navbar-expand-lg py-0">
+					<div class="container-fluid d-flex align-items-center px-0">
+						<a href="#" class="navbar-brand">
+							<span class="logo"><img src="images/logo.png" width="40" height="40" alt="PretermConnect"></span>
+							<span class="ms-2 fw-bold color-orange">PretermConnect</span>
+						</a>
+						<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+							<span class="material-symbols-outlined">menu</span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarCollapse">
+							<div class="navbar-nav align-items-center ms-auto">								
+								<a href="index.html" class="top-nav-link">Home</a>
+								<div class="fw-700 color-orange margin-right-40">About Us</div>
+								<a href="pretermconnect/index.html"class="btn btn-orange">Login</a>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+			<div class="fw-700 page-title-3 mt-3">Our Team</div>
+			<div class="my-3">
+				<p>The PretermConnect team consists of a small group of researchers led by Dr. C. Jason Wang, MD, PhD from the Center for Policy, Outcomes and Prevention at Stanford University. The app was developed as part of ongoing research to better understand the risk factors for preterm birth and the potential for mobile health to improve health outcomes. By providing a mobile resource, we hope to: (1) increase parents’ engagement with their baby’s care and their own health and (2) provide information that allow people to feel more comfortable making decisions for their overall wellbeing.</p> 
+				<p>If you have any questions about our study or wish to contact us, please submit the form below.</p>
+			</div>
+			<form class="needs-validation" id="contact-form" novalidate>
+				<div class="row">
+					<div class="col-12 col-md-12 col-lg-4">
+						<label for="validationCustom01" class="form-label fw-700">Your Name</label>
+						<input type="text" class="form-control" name="your_name" id="validationCustom01" value="" required>
+						<div class="valid-feedback"></div>
+					</div>
+					<div class="col-12 col-md-12 col-lg-4">
+						<label for="validationCustom02" class="form-label fw-700">Email Address</label>
+						<input type="email" class="form-control" name="your_email" id="validationCustom02" value="" required>
+						<div class="valid-feedback"></div>
+					</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-12 col-md-12 col-lg-8">
+						<div class="fw-700">Message:</div>
+						<textarea class="form-control" name="your_msg" id="validationCustom02" required></textarea>
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col-12 col-md-12 col-lg-5"><div class="d-none" id="msg-submitted">Thank you for contacting us! We will get back to you soon.</div></div>
+					<div class="col-12 col-md-12 col-lg-3 text-end">
+						<button type="submit" class="btn btn-orange" id="btn-submit">Submit</button>
+					</div>
+				</div>
+			</div>
+		</form>
+		<div class="page-contents-2" style="background-color:#FFF5DC;">
+			<div class="fw-700 page-title-3">Collaborators and Contributors</div>
+			<div class="my-3">
+				<p>The PretermConnect project is funded by the Richard King Mellon Foundation. Within Allegheny County, we also collaborate with community organizations and nonprofits with similar goals. Our academic collaborators include health professionals from Stanford University, University of Pittsburgh Medical Center, Children’s Hospital of Philadelphia, Harvard University, and Boston University.</p>
+				<p>The app has also been designed based on feedback from community organizations and co-design/focus group sessions with mothers of preterm infants.​</p>
+			</div>
+		</div>
+	</div>	
+  <script>
+	(function () {
+	  'use strict'
+		var forms = document.querySelectorAll('.needs-validation')
+		Array.prototype.slice.call(forms).forEach(function (form) {
+			form.addEventListener('submit', function (event) {
+				if (!form.checkValidity()) {
+					event.preventDefault()
+					event.stopPropagation()
+				}else{
+					event.preventDefault()
+					event.stopPropagation();
+					$("btn-submit").attr("disabled","disabled")
+					var postData = $("#contact-form").serializeObject();
+					var apiURL = "https://www.pretermconnect.org/php/web_inquiry.php";
+					//var apiURL="https://www.earlyarrival.org/php/web_inquiry.php";
+					$.post(apiURL,postData,function(){
+						$(".form-control").val("");
+						$("#msg-submitted").removeClass("d-none");
+						$("btn-submit").removeAttr("disabled").blur();
+						setTimeout(function(){
+							$("#msg-submitted").addClass("d-none");
+						}, 10000);
+					})
+					return false;
+				}
+				form.classList.add('was-validated')
+		  }, false)
+		})
+	})()
+  </script> 
+</body>
+</html>
